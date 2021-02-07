@@ -22,7 +22,7 @@ export const SalesCard: FunctionComponent<SalesCardProps> = ({
         <Name>{name}</Name>
         <Description>{description}</Description>
         <PriceRow>
-          <Price>${price}</Price> <PerMonth>/mo</PerMonth>
+          <Price>${USFormat.format(price)}</Price> <PerMonth>/mo</PerMonth>
         </PriceRow>
         <Buy onClick={() => onBuy()}>Buy {name}</Buy>
       </TopHalf>
@@ -51,6 +51,8 @@ export const SalesCard: FunctionComponent<SalesCardProps> = ({
     </Container>
   );
 };
+
+const USFormat = new Intl.NumberFormat();
 
 const Container = styled.div`
   box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -147,6 +149,7 @@ const Perk = styled.li`
 `;
 
 const PerkIcon = styled.svg`
+  flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
   color: rgb(16, 185, 129);

@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { SalesCard, SalesCardProps } from "./sales-card";
 
 export default {
-  title: "Chillicream/SalesCard",
+  title: "Components/SalesCard",
   component: SalesCard,
 } as Meta;
 
